@@ -1,3 +1,23 @@
+## License and Attribution
+
+This repository is a modified version of  
+https://github.com/original-author/original-repo
+
+Original software © Author(s), released under the GNU General Public License (GPL).
+This fork retains the GPL license in accordance with its terms.
+
+
+### Modifications in this fork:
+-
+
+
+### Usage
+These commands show how the code was run locally for our analysis.
+
+
+
+
+
 # GOGetter
 
 Scripts for the GOgetter pipeline, a set of python and bash scripts to summarize and visualize GO Slim terms in of one or more sets of genes. If you use this pipeline, please cite the following paper: 
