@@ -1,7 +1,7 @@
 ## License and Attribution
 
 This repository is a modified version of  
-[https://github.com/original-author/original-repo](https://github.com/jessiepelosi/GOGetter.git)
+[[https://github.com/original-author/original-repo](https://github.com/jessiepelosi/GOGetter.git)](https://github.com/jessiepelosi/GOGetter.git)
 
 Original software © Author(s), released under the GNU General Public License (GPL).
 This fork retains the GPL license in accordance with its terms.
