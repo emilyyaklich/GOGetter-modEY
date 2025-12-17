@@ -75,11 +75,11 @@ while getopts "t:i:e:s:d:l:p:b:v:f:D:hn" opt; do
 		(i) INPUTFILE=${OPTARG};;
 		(e) E_VALUE=${OPTARG};;
 		(s) MAX_TARG_SEQ=${OPTARG};;
-		(D) BLASTDB=${OPTARG};;
+		(d) BLASTDB=${OPTARG};;
 		(l) LENGTH=${OPTARG};;
 		(v) E_VALUE_FILT=${OPTARG};;
 		(f) FILTER=${OPTARG};;
-		(b) GOSLIMDATABASE=${OPTARG};;
+		(D) GOSLIMDATABASE=${OPTARG};;
       (p) PIDENT=${OPTARG};;
       (b) BITSCORE=${OPTARG};;
       (n) PROGRAM=${1:-BLAST};;
