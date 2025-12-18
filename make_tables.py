@@ -91,6 +91,7 @@ print(GOSlim_merge_gene.head())
 
 # drop duplicate rows
 GOSlim_merge_gene = GOSlim_merge_gene.drop_duplicates()
+GOSlim_merge_gene.sort_values(by=GOSlim_merge_gene.columns[0], inplace=True)
 
 # save to file: keeping gene name, TAIR ID, and GOSlim terms, Go Term, Evidence Code
 output_file = HITS + '.genes_to_GO_terms.tsv'
