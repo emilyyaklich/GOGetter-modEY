@@ -53,14 +53,13 @@ freqcounts_locus = GOSlim_merge_locus['GOSlimTerm'].value_counts(normalize=True)
 freqcounts_locus.to_csv(HITS + '.freqcounts-locus.tsv',sep='\t')
 
 
-
-
 # Below is code added by E Yaklich to create an output file with geneID and GO term mapping
-# create a copy to avoid SettingWithCopyWarning
+# read in best hits table again
 best_hits = pd.read_table(HITS)
-#best_hits_copy = best_hits[['Query', 'Subject']].copy()
 
+#create a copy when subsetting to avoid SettingWithCopyWarning
 best_hits_subset = best_hits[['Query', 'Subject']].copy()
+
 
 # just keep transcript ID
 best_hits_subset['Query'] = best_hits_subset['Query'].str.extract(r'([^\::]+)')
