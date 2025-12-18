@@ -8,12 +8,23 @@ This fork retains the GPL license in accordance with its terms.
 
 
 ### Modifications in this fork:
--
+In `GO_getter.sh`
+- Change arugment for go slim input database from `-b` to `-D` and argument for blast database from `-D` to `-d` to match options documentation from above
+- If a blast run already exists, skip step and do not overwrite the existing blast run
 
+In `make_tables.py`:
+- added lines 56-100 which will take the output blast best hits and map it to the specific GO terms in `ATH_GO_GOSLIM.txt`
+    - The output is a tsv file with 5 columns:
+        - gene_name (species of interest) 
+        - TAIR_ID of the *A. thaliana* locus 
+        - GO ID
+        - GOTerm
+        - Evidence Code (for assigning the *A. thaliana* gene to the GO term)
+            - This is important to note because all GO assignments via BLAST are IEA, but it can be helpful to note the origin of the *A. thalina* assigment
 
 ### Usage
-These commands show how the code was run locally for our analysis.
 
+See [wiki](https://github.com/emilyyaklich/GOGetter-modEY/wiki/Usage-example) for usage example. 
 
 
 
