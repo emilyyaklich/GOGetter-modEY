@@ -64,8 +64,7 @@ best_hits_subset = best_hits[['Query', 'Subject']].copy()
 # just keep transcript ID
 best_hits_subset['Query'] = best_hits_subset['Query'].str.extract(r'([^\::]+)')
 
-
-# rename columns for clarity
+# rename columns
 best_hits_subset.columns = ['gene_name', 'TAIR_ID']
 
 # clean the 'TAIR_ID' column by removing version numbers (e.g., AT2G07760.1 -> AT2G07760)....i.e. going from transcript to locus. This will remove any number of digits or letters, ex ID.t18 or ID.UORF1
@@ -75,7 +74,7 @@ best_hits_subset['TAIR_ID'] = best_hits_subset['TAIR_ID'].str.replace(r'\..*', '
 # subset the GOSlim database to include the TAIRAccession (Arabidopsis TAIR ID), the associated GO term and GOID, and Evidence Code
 GOSlim_DB_subset = GOSlim_DB[['locus', 'GOID', 'GOTerm','EvidenceCode']].copy()  # make a copy to avoid SettingWithCopyWarning
 
-# Check example sample cleaned data from both files
+# check example sample cleaned data from both files
 print("Sample Best Hits (TAIR IDs cleaned):")
 print(best_hits_subset.head())
 
