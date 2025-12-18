@@ -97,11 +97,15 @@ Sessa, E.B., R. Masalia, N. Arrigo, M.S. Barker, and J.A. Pelosi."
 echo 
 
 
-# Blast query against reference database, the user can change the database as needed; default is Arabidopsis thaliana
+# Blast query against reference database, the user_target_seqs $MAX_TARG_SEQ -db $BLASTDB -query $INPUTFILE -outfmt 6 -out $INPUTFILE.blast
 if [[ $PROGRAM = "BLAST" ]]; then
-	echo "Running GOgetter on $INPUTFILE with BLAST!"
-   echo 
-   blastx -num_threads $N_THREADS -evalue $E_VALUE -max_target_seqs $MAX_TARG_SEQ -db $BLASTDB -query $INPUTFILE -outfmt 6 -out $INPUTFILE.blast
+    echo "Running GOgetter on $INPUTFILE with BLAST!"
+    echo
+    if [[ -f $INPUTFILE.blast ]]; then
+        echo "$INPUTFILE.blast already exists. Skipping BLAST."
+    else
+        blastx -num_threads $N_THREADS -evalue $E_VALUE -max_target_seqs $MAX_TARG_SEQ -db $BLASTDB -query $INPUTFILE -outfmt 6 -out $INPUTFILE.blast
+    fi
 else
 	echo "Running GOgetter on $INPUTFILE with DIAMOND!"
    echo 
@@ -126,4 +130,4 @@ echo "Generating tables for $INPUTFILE!"
 python make_tables.py -i $INPUTFILE.blast.besthits.tsv -d $GOSLIMDATABASE  
 
 echo 
-echo "GOgetter has finishied!"
+echo "GOgetter has finished!"

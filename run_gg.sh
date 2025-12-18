@@ -14,7 +14,7 @@
 module load  BLAST+/2.13.0-gompi-2022a
 module load Miniforge3
 
-source activate /home/ely67071/myenvs/sunflower_stress
+source activate /home/ely67071/.conda/envs/go_getter
 
 input_dir=$1
 
