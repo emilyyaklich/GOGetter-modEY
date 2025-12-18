@@ -24,7 +24,7 @@ In `make_tables.py`:
 
 ### Usage
 
-
+See [wiki](https://github.com/emilyyaklich/GOGetter-modEY/wiki/Usage-example) for usage example. 
 
 
 
