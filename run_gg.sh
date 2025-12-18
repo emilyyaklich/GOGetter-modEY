@@ -18,7 +18,7 @@ source activate /home/ely67071/.conda/envs/go_getter
 
 input_dir=$1
 
-#makeblastdb -in "${input_dir}/Araport11_pep_20250411_representative_gene_model" -dbtype prot
+makeblastdb -in "${input_dir}/Araport11_pep_20250411_representative_gene_model" -dbtype prot
 
 
 
